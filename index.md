@@ -14,8 +14,8 @@ etherpad: https://pad.carpentries.org/2019-06-20-ttt-fredhutch-UW            # o
 eventbrite:           # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
 locations:
   - venue: "Fred Hutchinson Cancer Research Center"
-    address: ""
-    latlng: ""
+    address: "The Coop Lab, Arnold Building (M1-B406), 1100 Fairview Ave N, Seattle, WA 98109"
+    latlng: "47.627323,-122.331527"
 
 ---
 
@@ -112,10 +112,8 @@ This is an online event. We will meet using the online videoconference software 
 
 {% else %}
 {% assign inperson = "true" %}
-{{ loc.address }} {% if loc.latlng %} Get directions with
-    <a href="//www.openstreetmap.org/?mlat={{loc.latlng | replace:',','&mlon='}}&zoom=16">OpenStreetMap</a>
-    or
-    <a href="//maps.google.com/maps?q={{loc.latlng}}">Google Maps</a>. {% endif %}
+{{ loc.address }} {% if loc.latlng %} This training will be held on Fred Hutch's campus in South Lake Union in the Coop Lab (M1-B406, Arnold Building). If you are not an employee of the Hutch, visitor information can be found 
+    <a href="http://www.fredhutch.org/en/contact-us/visit-us.html">here</a>. You will need to check in at the front desk of Arnold and obtain a visitor badge on both Thursday and Friday morning. We recommend using public transportation to visit; there is a <a href="http://www.fredhutch.org/en/contact-us/visit-us/shuttles.html">shuttle from UW</a>. Please note that visitor parking on our campus is limited to two hours; there is limited street parking available nearby, or please contact your host (Kate Hertweck) in advance if you need a parking space.{% endif %}
 
 {% endif %}
 {% endfor %}
@@ -217,9 +215,6 @@ for more information.
   Please see <a href="{{ site.training_site }}">this site</a> for course material and tentative schedule.
 </p>
 
-
-<hr/>
-
 <!--
 
 <div class="row">
@@ -277,7 +272,6 @@ for more information.
   e.g., '2015-06-10-esu'.
 -->
 {% if page.etherpad %}
-<hr/>
 
 <p id="etherpad">
   <strong>Etherpad:</strong> <a href="{{page.etherpad}}">{{page.etherpad}}</a>.
